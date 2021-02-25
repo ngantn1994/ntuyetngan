@@ -1,0 +1,25 @@
+const homedata = {
+  sections: ['Introduction', 'Biography', 'Projects', 'Contact'],
+  introName: 'Nguyen <b>Tuyet Ngan</b>',
+  introTitle: 'Software Engineer',
+  educationInfo: '🎓&ensp;<b>Bachelor\'s Degree</b>&ensp;in&ensp;<b>Computer Sciences</b>&ensp;at Vietnam National University - Hanoi University of Science',
+  companyName: 'KOEI TECMO SOFTWARE VIETNAM',
+  jobTitle: 'Full stack Developer for Online Multiplayer games',
+  periodStart: 'AUG<br>2016',
+  periodArrow: '🠖<br>4 years<br>4 months',
+  periodEnd: 'DEC<br>2020',
+  positionDetail: '➤ Handle all assigned project’s related programming tasks (including front-end, back-end and server related tasks).<br>➤ Java training for the department’s new hire (2017 – 2020)<br>',
+  overseaTitle: '✈ Overseas experiences',
+  overseaDetails: '➤ Koei Tecmo <b>Singapore</b> (<b>3 months</b>, from May 2018 to August 2018)<br>➤ Koei Tecmo <b>Japan</b> (<b>6 months</b>, from July 2019 to December 2019)<br>',
+  certificates: ['FUNDAMENTAL INFORMATION TECHNOLOGY ENGINEERS EXAMINATION (FE)<br>', 'TOEIC <b>975</b>'],
+  pdfResume: '📝 PDF Resume',
+  pdfLink: './nguyentuyetngan_cv.pdf',
+  skillShortIntro: 'Experience in Full-Stack Web Development with Java and PHP back-end, and eager to learn any technologies or procedures that the job would require. Completing tasks with the highest quality is my priority, and I want to devote myself to work that can inspire its users.<br><br>(Currently living in Kanagawa, Japan. Looking for remote positions, or positions in the Kanto region.)',
+  bottomDisclaimer: 'Powered by VueJS - Hosting by Amazon S3<br>© 2021 Nguyen Tuyet Ngan. All rights reserved.<br>CSS background by www.heropatterns.com',
+  education: 'Education',
+  experiences: 'Experiences',
+  certificatesTitle: 'Certificates',
+  skillTags: 'Skill Tags',
+};
+
+export default homedata;
