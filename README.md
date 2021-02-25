@@ -1,2 +1,2 @@
 # ntuyetngan
-Source code of ntuyetngan.com
+Source code of https://ntuyetngan.com
