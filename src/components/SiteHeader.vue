@@ -2,7 +2,13 @@
   <header>
     <nav>
       <ul>
-        <li :class="{'nav-item': true, 'nav-item-active': activeText === 'blog'}">
+        <li :class="{'nav-item': true, 'nav-item-active': activeText === 'about',
+          'is-mobile-only': true }">
+          <div :class="{'menu-marker': true, 'menu-marker-selected': isMenuOpen }"
+            @click="clickMenu()" :v-html="menuIcon">{{menuIcon}}</div>
+        </li>
+        <li :class="{'nav-item': true, 'nav-item-active': activeText === 'blog',
+          'is-mobile-hidden': true }">
           <router-link to="/">
             <NavText text="Blog"/>
           </router-link>
@@ -14,13 +20,26 @@
               width="285px" positionY="7px"/>
           </router-link>
         </li>
-        <li :class="{'nav-item': true, 'nav-item-active': activeText === 'about'}">
+        <li :class="{'nav-item': true, 'nav-item-active': activeText === 'about',
+          'is-mobile-hidden': true }">
           <router-link to="/">
             <NavText text="Works"/>
           </router-link>
         </li>
       </ul>
     </nav>
+    <div :class="{'mobile-menu': true, 'is-mobile-only': true, 'mobile-menu-open': isMenuOpen }">
+      <router-link to="/">
+        <div class="mobile-menu-item">
+          Blog
+        </div>
+      </router-link>
+      <router-link to="/">
+        <div class="mobile-menu-item">
+          Works
+        </div>
+      </router-link>
+    </div>
   </header>
 </template>
 
@@ -38,6 +57,18 @@ export default {
     activeText: {
       type: String,
       required: true,
+    },
+  },
+  data() {
+    return {
+      isMenuOpen: false,
+      menuIcon: '☰',
+    };
+  },
+  methods: {
+    clickMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+      this.menuIcon = this.isMenuOpen ? '×' : '☰';
     },
   },
 };
@@ -68,13 +99,73 @@ nav {
 ul {
   display: flex;
   list-style-type: none;
+  justify-content: space-between;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 .nav-item {
   display: inline-block;
 }
 .nav-item-active {
   border-bottom: 2px inset #212121;
+}
+.is-mobile-hidden {
+  display: none;
+}
+.is-mobile-only {
+  display: inline-block;
+  width: 60px;
+}
+@media only screen and (min-width: 600px) {
+  .is-mobile-hidden {
+    display: inline-block;
+  }
+  .is-mobile-only {
+    display: none;
+  }
+  ul {
+    justify-content: center;
+  }
+}
+.menu-marker {
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 25px;
+  transition: 200ms all ease-in-out;
+}
+.menu-marker-selected {
+  font-weight: bold;
+  color: #FFF;
+  background-color: #212121;
+}
+.mobile-menu {
+  width: 100%;
+  color: #FFF;
+  background-color: #212121;
+  position: fixed;
+  top: 60px;
+  left: -100%;
+  transition: 200ms left ease-in-out;
+}
+.mobile-menu-item {
+  width: 100%;
+  margin: auto;
+  height: 58px;
+  border-bottom: 2px solid #FFF;
+  text-decoration: none;
+  color: #FFF;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 20px;
+}
+.mobile-menu-open {
+  top: 60px;
+  left: 0px;
+}
+a {
+  text-decoration: none;
 }
 </style>

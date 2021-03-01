@@ -8,9 +8,11 @@
         v-html="projectsArray[currentProject].details">
       </div>
       <div class="details-icons">
-        <div class="details-icon"
-          v-for="(image, index) in projectsArray[currentProject].icons" :key="index">
-          <img :src="image"/>
+        <div class="details-fixed-height-box">
+          <div class="details-icon"
+            v-for="(image, index) in projectsArray[currentProject].icons" :key="index">
+            <img :src="image"/>
+          </div>
         </div>
       </div>
     </div>
@@ -86,9 +88,11 @@ export default {
 }
 .timeline-bar-item {
   height: 50px;
-  line-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-family: 'Asap Condensed', sans-serif;
-  font-size: 1vw;
+  font-size: max(0.9vh, 1vw);
   font-weight: bold;
   position: absolute;
   top: 0px;
@@ -127,22 +131,22 @@ export default {
 }
 .detail-box {
   background-color: #212121;
-  width: calc(100% - 100px);
-  height: calc(100% - 70px);
+  width: calc(100% - 40px);
+  height: calc(100% - 90px);
   position: absolute;
   top: 0px;
-  left: 50px;
+  left: 10px;
   color: #FFF;
+  overflow-y: auto;
+  padding-bottom: 20px;
 }
 .detail-title {
   text-align: center;
-  height: 50px;
   width: 90%;
   margin: auto;
-  line-height: 50px;
   border-bottom: 2px solid #FFF;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 30px;
+  font-size: max(2vw, 2vh);
   font-weight: bold;
 }
 .detail-content {
@@ -150,26 +154,66 @@ export default {
   margin: auto;
   width: fit-content;
   max-width: 90%;
-  font-size: 20px;
+  font-size: 2vh;
   padding: 20px;
 }
 .details-icons {
   text-align: center;
-  width: fit-content;
-  height: 60px;
   max-width: 90%;
-  font-size: 20px;
-  padding: 20px;
+  padding: 1% 2% 1% 2%;
   background-color: #FFF;
   margin: auto;
-  overflow-x: scroll;
-  box-shadow:#33B4D7 10px 10px 0px -3px, rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+  overflow-y: auto;
+  box-shadow:#33B4D7 5px 5px 0px -3px, rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  position: relative;
+}
+::-webkit-scrollbar {
+  display: block;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #33B4D7;
+}
+.details-icons::-webkit-scrollbar-thumb {
+  background: #666;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #212121;
+}
+.details-fixed-height-box {
+  height: 60px;
 }
 .details-icon {
   height: 50px;
-  width: fit-content;
   display: inline-block;
   padding: 5px;
+}
+.details-fixed-height-box {
+  height: 50px;
+  zoom: 50%
+}
+
+@media only screen and (min-height: 750px) and (min-width: 800px) {
+  .details-fixed-height-box {
+    height: 60px;
+    zoom: 100%;
+  }
+  .details-icons {
+    box-shadow:#33B4D7 10px 10px 0px -3px, rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+   rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
 }
 </style>

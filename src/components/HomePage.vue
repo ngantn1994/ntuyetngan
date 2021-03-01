@@ -23,19 +23,21 @@
       </div>
     </div>
 
-    <div :class="{ 'section-container': true,
+    <div :class="{ 'section-container': true, 'hidden-on-mobile': true,
       'hidden': scrollValue <= 200 || scrollValue >= 1000 }">
-      <div class="top-containter">
+      <div class="top-right-container">
         <div id="education-move-box" class="education-move-box">
-          <div class="fancy-title-box">
-            <FancyTitle :text="texts.education" class="education-title"/>
-            <div class="education-box" v-html="texts.educationInfo"></div>
-          </div>
+          <FancyTitle :text="texts.education" class="education-title hidden-on-smaller-screen"/>
+          <div class="big-title education-smaller-title
+            show-on-smaller-screen" v-html="texts.education"></div>
+          <div class="education-box" v-html="texts.educationInfo"></div>
         </div>
       </div>
-      <div class="bottom-left-container">
+      <div class="large-left-container">
         <div id="experience-move-box" class="experience-move-box">
-          <FancyTitle :text="texts.experiences" class="experience-title"/>
+          <FancyTitle :text="texts.experiences" class="experience-title hidden-on-smaller-screen"/>
+          <div class="big-title experience-smaller-title
+            show-on-smaller-screen" v-html="texts.experiences"></div>
           <div class="experience-box">
             <div class="company-logo"><img src="../assets/kt-logo.png"/></div>
             <div class="company-name-box">
@@ -59,7 +61,10 @@
       </div>
       <div class="bottom-right-container">
         <div id="certificate-move-box" class="certificate-move-box">
-          <FancyTitle :text="texts.certificatesTitle" class="certificate-title"/>
+          <FancyTitle :text="texts.certificatesTitle"
+            class="certificate-title hidden-on-smaller-screen"/>
+          <div class="big-title certificate-smaller-title
+            show-on-smaller-screen" v-html="texts.certificatesTitle"></div>
           <div class="certificate-details">
             <div v-for="(certificate, index) in texts.certificates" :key="index">
               <div v-html="certificate"></div>
@@ -70,11 +75,34 @@
       </div>
     </div>
 
+    <div :class="{ 'section-container': true, 'show-on-mobile': true,
+      'hidden': scrollValue <= 200 || scrollValue >= 1000 }">
+      <div class="full-container" id="mobile-experience-move-box">
+        <div :class="{ 'eduex-box': true }">
+          <div class="big-mobile-title" v-html="texts.education"></div>
+          <div class="bottom-border" v-html="texts.educationInfo"></div>
+          <div class="big-mobile-title" v-html="texts.experiences"></div>
+          <div class="company-name-mobile" v-html="texts.companyName"></div>
+          <div class="company-position-mobile" v-html="texts.jobTitle"></div>
+          <div v-html="texts.positionDetail"></div>
+          <br>
+          <div class="blue-bold-text" v-html="texts.overseaTitle"></div>
+          <div class="bottom-border" v-html="texts.overseaDetails"></div>
+          <div class="big-mobile-title" v-html="texts.certificatesTitle"></div>
+          <div v-for="(certificate, index) in texts.certificates" :key="index">
+            <div v-html="certificate"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div :class="{ 'section-container': true,
       'hidden': scrollValue <= 800 || scrollValue >= 1500 }">
       <div id="project-move-box" class="project-move-box">
         <div class="project-box">
-          <FancyTitle :text="texts.sections[2]" class="project-title"/>
+          <FancyTitle :text="texts.sections[2]" class="project-title hidden-on-smaller-screen"/>
+          <div class="big-title project-smaller-title
+            show-on-smaller-screen" v-html="texts.sections[2]"></div>
           <BrowseProjects class="timeline-browser" :projectsArray="projects"/>
         </div>
       </div>
@@ -87,15 +115,18 @@
           <div class="contact-title">
             {{texts.sections[3]}}
           </div>
-          <div class="contact-item" v-for="(contact, index) in contacts" :key="index">
+          <div class="contact-item hidden-on-mobile"
+            v-for="(contact, index) in contacts" :key="index">
             <FlipBox :normalText="contact.title" :hoverText="contact.info"
               :uniqueIndex="index" class="contact-flip-box"/>
           </div>
           <a :href="texts.pdfLink" target="_blank"
             class="contact-resume" v-html="texts.pdfResume"></a>
         </FancyRoll>
-        <FancyTitle :text="texts.skillTags" class="skill-title"/>
-        <div class="skill-tag-container">
+        <FancyTitle :text="texts.skillTags" class="skill-title hidden-on-smaller-screen"/>
+        <div class="skill-tag-container hidden-on-mobile">
+          <div class="big-title skill-smaller-title
+            show-on-smaller-screen" v-html="texts.skillTags"></div>
           <div class="skill-tag-wrapper" v-for="(skill, index) in skills" :key="index">
             <div class="skill-tag" :style="{'background': skill.color}">
               {{skill.keyword}}
@@ -108,7 +139,8 @@
 
     <div :class="{'bottom-info': true,
       'bottom-info-show': currentSection === 4, 'bottom-info-hide': currentSection < 4}">
-      <div class="bottom-text" v-html="texts.bottomDisclaimer"></div>
+      <div class="bottom-text hidden-on-mobile" v-html="texts.bottomDisclaimer"></div>
+      <div class="bottom-text show-on-mobile" v-html="texts.bottomMobile"></div>
     </div>
 
     <BottomCounter :sectionDescriptions="texts.sections"
@@ -170,6 +202,7 @@ export default {
       const educationMoveBox = document.getElementById('education-move-box');
       const experienceMoveBox = document.getElementById('experience-move-box');
       const certificateMoveBox = document.getElementById('certificate-move-box');
+      const mobileEduexMoveBox = document.getElementById('mobile-experience-move-box');
       // section 3
       const projectMoveBox = document.getElementById('project-move-box');
       // section 4
@@ -189,20 +222,24 @@ export default {
           educationMoveBox.style.opacity = tempOpacity;
           experienceMoveBox.style.opacity = tempOpacity;
           certificateMoveBox.style.opacity = tempOpacity;
+          mobileEduexMoveBox.style.opacity = tempOpacity;
         } else if (this.scrollValue >= 500 && this.scrollValue <= 700) {
           educationMoveBox.style.opacity = '100%';
           experienceMoveBox.style.opacity = '100%';
           certificateMoveBox.style.opacity = '100%';
+          mobileEduexMoveBox.style.opacity = '100%';
         } else if (this.scrollValue > 700 && this.scrollValue <= 1000) {
           const tempOpacity = `${(1000 - this.scrollValue) / 3}%`;
           educationMoveBox.style.opacity = tempOpacity;
           experienceMoveBox.style.opacity = tempOpacity;
           certificateMoveBox.style.opacity = tempOpacity;
+          mobileEduexMoveBox.style.opacity = tempOpacity;
         }
       } else {
         educationMoveBox.style.opacity = '0';
         experienceMoveBox.style.opacity = '0';
         certificateMoveBox.style.opacity = '0';
+        mobileEduexMoveBox.style.opacity = '0';
       }
 
       if ((this.currentSection === 2 && this.scrollValue >= 700) || this.currentSection === 3) {
@@ -248,7 +285,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
+/* for mobile content */
+.hidden-on-smaller-screen {
+  display: none;
+}
+.hidden-on-mobile {
+  display: none;
+}
+.show-on-mobile {
+  display: block;
+}
 /* main components */
 .home-content {
   width: 100%;
@@ -286,15 +335,22 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .show {
   visibility: visible;
 }
-.left-container {
+.full-container {
   height: 100%;
-  width: 50%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.left-container {
+  height: 50%;
+  width: 100%;
   position: relative;
   float: left;
 }
 .right-container {
-  height: 100%;
-  width: 50%;
+  height: 50%;
+  width: 100%;
   position: relative;
   float: right;
 }
@@ -305,19 +361,14 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   top: 0px;
   left: 0px;
 }
-.bottom-left-container {
-  height: 70%;
-  width: 70%;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
+.large-left-container {
+  width: 100%;
+}
+.top-right-container {
+  width: 100%;
 }
 .bottom-right-container {
-  height: 70%;
-  width: 30%;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
+  width: 100%;
 }
 /* introduction section */
 .introduction-section {
@@ -338,9 +389,10 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   box-shadow:#33B4D7 20px 20px 0px -3px, rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   position: absolute;
-  top: 50%;
-  right: 15%;
-  transform: translate(0%, -50%);
+  top: 10%;
+  right: 50%;
+  transform: translate(50%, 0%);
+  zoom: 50%;
 }
 /* name & title */
 .name-move-box {
@@ -351,22 +403,22 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   left: 0%;
 }
 .name-box {
-  width: 600px;
+  width: calc(90% - 50px);
   height: 100px;
   background-color: #33B4D7;
   text-align: center;
   line-height: 100px;
   position: absolute;
   top: 40%;
-  left: 10%;
+  left: 5%;
   font-family: 'Asap Condensed', sans-serif;
-  font-size: 75px;
+  font-size: 5vw;
   color: #212121;
   box-shadow:rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   z-index: 2;
 }
 .job-title-box {
-  width: 600px;
+  width: calc(90% - 50px);
   height: 125px;
   background-color: #212121;
   color: #FFF;
@@ -374,14 +426,39 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   line-height: 160px;
   position: absolute;
   top: calc(40% + 50px);
-  left: calc(10% + 50px);
+  left: calc(5% + 50px);
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 70px;
+  font-size: 4.5vw;
   box-shadow:rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   z-index: 1;
 }
 /* biography section */
 /* education */
+.eduex-box {
+  width: calc(100% - 50px);
+  max-height: calc(100% - 50px);
+  padding: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #FFF;
+  box-shadow:#212121 10px 10px 0px -3px,
+   rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  text-align: left;
+  overflow: auto;
+  font-size: 2vh;
+}
+.eduex-box::-webkit-scrollbar {
+  display: block;
+}
+.eduex-box::-webkit-scrollbar {
+  width: 2px;
+}
+.bottom-border {
+  width: 100%;
+  border-bottom: 1px solid #212121;
+  margin-bottom: 5px;
+}
 .education-move-box {
   width: 100%;
   height: 100%;
@@ -391,28 +468,49 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   opacity: 0;
 }
 .education-title {
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  z-index: 1;
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+  z-index: 100;
+}
+.education-smaller-title {
+  margin: auto;
+  margin-top: 30px;
+  position: relative;
+  z-index: 100;
 }
 .education-box {
   position: absolute;
-  top: calc(5% + 25px);
-  left: calc(5% + 100px);
-  width: calc(95% - 650px);
-  height: 50px;
-  display: flex;
-  align-items: center;
+  top: 5%;
+  left: 2%;
+  width: calc(95% - 60px);
+  height: fit-content;
   background-color: #FFF;
   padding: 30px;
-  padding-left: 400px;
   text-align: left;
-  font-size: 20px;
   box-shadow:#212121 10px 10px 0px -3px,
    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 /* experience */
+.big-title {
+  color: #33B4D7;
+  text-shadow: 2px 2px #212121;
+  font-family: 'Asap Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+.big-mobile-title {
+  color: #33B4D7;
+  text-shadow: 2px 2px #212121;
+  font-family: 'Asap Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.show-on-smaller-screen {
+  display: block;
+}
 .experience-move-box {
   position: absolute;
   top: 0%;
@@ -426,7 +524,15 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   height: 125px;
   position: absolute;
   top: 10%;
-  left: 7%;
+  left: 2%;
+  z-index: 1;
+}
+.experience-smaller-title {
+  width: fit-content;
+  height: 125px;
+  position: absolute;
+  top: calc(10% + 20px);
+  left: 15%;
   z-index: 1;
 }
 .experience-box {
@@ -454,8 +560,8 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 .company-name {
   width: 100%;
-  height: 50px;
-  line-height: 50px;
+  /* height: 50px; */
+  /* line-height: 50px; */
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 30px;
   font-weight: bold;
@@ -463,8 +569,8 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 }
 .company-position {
   width: 100%;
-  height: 30px;
-  line-height: 30px;
+  /* height: 30px; */
+  /* line-height: 30px; */
   font-family: 'Asap Condensed', sans-serif;
   color: #33B4D7;
   text-transform: uppercase;
@@ -472,8 +578,24 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   font-weight: bold;
   text-align: left;
 }
+.company-name-mobile {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.company-position-mobile {
+  font-family: 'Asap Condensed', sans-serif;
+  color: #33B4D7;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: left;
+}
 .period-box {
-  float: right;
+  position: absolute;
+  top: 10px;
+  right: 0px;
   padding-right: 10px;
 }
 .calendar-block {
@@ -534,6 +656,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   position: relative;
   z-index: 1;
 }
+.certificate-smaller-title {
+  margin: auto;
+  margin-top: 10%;
+  position: relative;
+  z-index: 1;
+}
 .certificate-details {
   width: 90%;
   position: relative;
@@ -566,6 +694,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   top: 3%;
   left: calc(50% - 250px);
 }
+.project-smaller-title {
+  width: 100%;
+  margin: auto;
+  margin-top: -10px;
+  font-size: 20px;
+}
 .project-box {
   background-color: #FFF;
   width: 90%;
@@ -573,13 +707,13 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   position: absolute;
   top: 5%;
   left: 5%;
-  box-shadow:#212121 20px 20px 0px -3px,
+  box-shadow:#212121 10px 10px 0px -3px,
    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
    z-index: 50;
 }
 .timeline-browser {
-  width: 94%;
-  height: calc(94% - 175px);
+  width: 97%;
+  height: 94%;
   position: absolute;
   bottom: 3%;
   left: 3%;
@@ -595,8 +729,9 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 .contact-box {
   width: 300px;
   position: absolute;
-  top: calc(50% - 300px);
-  left: calc(15% - 150px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .contact-title {
   width: 100%;
@@ -644,6 +779,12 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   width: 500px;
   z-index: 1;
 }
+.skill-smaller-title {
+  width: 100%;
+  margin: auto;
+  margin-top: -70px;
+  font-size: 40px;
+}
 .skill-tag-container {
   background: #FFF;
   padding: 20px;
@@ -652,7 +793,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   height: fit-content;
   position: absolute;
   right: 10%;
-  top: calc(50% - 175px);
+  top: 30px;
   box-shadow:#212121 20px 20px 0px -3px,
    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
    text-align: justify;
@@ -678,7 +819,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   padding: 10px;
   width: calc(100% - 20px);
   margin-top: 5px;
-  font-size: 20px;
+  font-size: 1.2vw;
 }
 /* bottom bar */
 .bottom-info {
@@ -703,5 +844,120 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
   transform: translate(0, -50%);
   text-align: center;
   font-weight: bold;
+}
+@media only screen and (min-width: 768px) and (min-height: 700px) {
+  .left-container {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    float: left;
+  }
+  .right-container {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    float: right;
+  }
+  .portrait-box {
+    position: absolute;
+    top: calc(50% + 30px);
+    right: 5%;
+    transform: translate(0%, -50%);
+    zoom: 75%;
+  }
+  .hidden-on-mobile {
+    display: block;
+  }
+  .show-on-mobile {
+    display: none;
+  }
+  .education-box {
+    top: calc(5% + 40px);
+    padding-top: 30px;
+  }
+  .experience-box {
+    top: calc(10% + 45px);
+    padding-top: 30px;
+  }
+  .period-box {
+    top: 30px;
+  }
+  .certificate-details {
+    margin-top: -15px;
+    padding-top: 30px;
+  }
+  .large-left-container {
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+  .top-right-container {
+    height: 50%;
+    width: 30%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  .bottom-right-container {
+    height: 50%;
+    width: 30%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+  .timeline-browser {
+    height: calc(94% - 35px);
+  }
+  .project-smaller-title {
+    font-size: 40px;
+    margin-top: 0px;
+  }
+  .project-box {
+    box-shadow:#212121 20px 20px 0px -3px,
+      rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  }
+  .contact-box {
+    top: calc(50% - 300px);
+    left: calc(15% - 150px);
+    transform: none;
+  }
+}
+@media only screen and (min-width: 1060px) and (min-height: 800px) {
+  .portrait-box {
+    top: calc(50% + 30px);
+    right: 5%;
+    transform: translate(0%, -50%);
+    zoom: 100%;
+  }
+  .hidden-on-smaller-screen {
+    display: block;
+  }
+  .show-on-smaller-screen {
+    display: none;
+  }
+  .education-box {
+    top: calc(5% + 100px);
+    padding-top: 100px;
+  }
+  .experience-box {
+    top: calc(10% + 75px);
+    left: 10%;
+    padding-top: 100px;
+  }
+  .period-box {
+    top: 10px;
+  }
+  .certificate-details {
+    margin-top: calc(10% + 75px);
+    padding-top: 100px;
+  }
+  .timeline-browser {
+    height: calc(94% - 175px);
+  }
+  .skill-tag-container {
+    top: calc(50% - 175px);
+  }
 }
 </style>

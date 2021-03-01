@@ -25,8 +25,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
 .nav-container {
   background: #33B4D7;
   width: 200px;

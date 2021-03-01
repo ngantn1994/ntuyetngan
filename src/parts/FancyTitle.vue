@@ -27,8 +27,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-
 .fancy-title.container {
   position: relative;
 }
@@ -36,9 +34,9 @@ export default {
   background-color: #212121;
   color: #FFF;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 100px;
-  width: 300px;
+  width: 200px;
   height: 100px;
   position: absolute;
   top: 0px;
@@ -82,14 +80,14 @@ export default {
   border-color: #212121 transparent transparent transparent;
   position: absolute;
   top: 50px;
-  left: 400px;
+  left: 300px;
 }
 .fancy-decoration-right-bottom {
   border: 50px solid #212121;
   border-color: transparent transparent #212121 transparent;
   position: absolute;
   top: 50px;
-  left: 400px;
+  left: 300px;
 }
 .fancy-decoration-right-square {
   background-color: #212121;
@@ -97,14 +95,14 @@ export default {
   height: 100px;
   position: absolute;
   top: 50px;
-  left: 350px;
+  left: 250px;
 }
 .fancy-decoration-right-triangle {
   border: 25px solid #666;
   border-color: #666 transparent transparent #666;
   position: absolute;
   top: 100px;
-  left: 350px;
+  left: 250px;
   z-index: 1;
 }
 </style>
