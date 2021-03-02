@@ -9,7 +9,7 @@
         </li>
         <li :class="{'nav-item': true, 'nav-item-active': activeText === 'blog',
           'is-mobile-hidden': true }">
-          <router-link to="/">
+          <router-link to="/blog">
             <NavText text="Blog"/>
           </router-link>
         </li>
@@ -29,7 +29,7 @@
       </ul>
     </nav>
     <div :class="{'mobile-menu': true, 'is-mobile-only': true, 'mobile-menu-open': isMenuOpen }">
-      <router-link to="/">
+      <router-link to="/blog">
         <div class="mobile-menu-item">
           Blog
         </div>

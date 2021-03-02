@@ -3,6 +3,7 @@ const homedata = {
   introName: 'Nguyen <b>Tuyet Ngan</b>',
   introTitle: 'Software Engineer',
   educationInfo: '🎓 <b>Bachelor\'s Degree</b> in <b>Computer Science</b> at Vietnam National University - Hanoi University of Science',
+  educationRef: '(Read more about Vietnam National University - Hanoi at <a target="_blank" href="https://en.wikipedia.org/wiki/Vietnam_National_University,_Hanoi">Wikipedia</a> or <a target="_blank" href="https://www.unipage.net/en/172/vietnam_national_university_hanoi">UniPage</a>',
   companyName: 'KOEI TECMO SOFTWARE VIETNAM',
   jobTitle: 'Full stack Developer for Online Multiplayer games',
   periodStart: 'AUG<br>2016',

@@ -9,7 +9,7 @@
           :class="{'counter-item': true, 'counter-active': (index + 1) === homepageAcctiveSection}">
           {{index + 1}}
           <span class="counter-arrow"></span>
-          <span class="counter-description">
+          <span class="counter-description hide-on-mobile">
             {{section}}
           </span>
         </li>
@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style scoped>
+.hide-on-mobile {
+  display: none;
+}
 .counter-container {
   background-color: #33B4D7;
   height: 30px;
@@ -129,5 +132,10 @@ ul {
 .counter-active {
   background-color: #212121;
   color: #FFF;
+}
+@media only screen and (min-width: 768px) and (min-height: 700px) {
+  .hide-on-mobile {
+    display: block;
+  }
 }
 </style>

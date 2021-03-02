@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <SiteHeader activeText="home"/>
-    <HomePage msg="Welcome to Your Vue.js App"/>
+    <HomePage msg="Resume page"/>
   </div>
 </template>
 

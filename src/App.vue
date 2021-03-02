@@ -14,6 +14,8 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed&family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
