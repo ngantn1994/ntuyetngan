@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Blog from '../views/Blog.vue';
 import BlogPost from '../components/BlogPost.vue';
+import UnfinishedPage from '../components/UnfinishedPage.vue';
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: Blog,
+  },
+  {
+    path: '/wip',
+    name: 'WIP',
+    component: UnfinishedPage,
   },
   {
     path: '/blog/:id',

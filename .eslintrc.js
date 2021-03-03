@@ -15,5 +15,6 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'linebreak-style': 0,
     'no-param-reassign': 0,
+    'import/no-webpack-loader-syntax': 'off',
   },
 };

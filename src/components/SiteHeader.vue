@@ -20,9 +20,9 @@
               width="285px" positionY="7px"/>
           </router-link>
         </li>
-        <li :class="{'nav-item': true, 'nav-item-active': activeText === 'about',
+        <li :class="{'nav-item': true, 'nav-item-active': activeText === 'wip',
           'is-mobile-hidden': true }">
-          <router-link to="/">
+          <router-link to="/wip">
             <NavText text="Works"/>
           </router-link>
         </li>
