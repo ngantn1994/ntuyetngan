@@ -3,7 +3,7 @@
     <SiteHeader activeText="wip"/>
     <div class="text-box">
       I'm still working on this page, so please come back later.<br>
-      I apolozige for the inconvinience. 🙇‍♀️🙇‍♀️🙇‍♀️
+      I apolozige for the inconvenience. 🙇‍♀️🙇‍♀️🙇‍♀️
     </div>
   </div>
 </template>

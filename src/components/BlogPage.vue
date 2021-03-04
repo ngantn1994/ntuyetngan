@@ -101,4 +101,18 @@ export default {
   bottom: 0px;
   left: 0px;
 }
+@media only screen and (min-width: 900px) {
+  .blog-post {
+    width: calc(100% - 40px);
+    max-width: 1024px;
+  }
+  .blog-thumb {
+    width: 300px;
+    box-shadow:#212121 10px 7px 0px -3px,
+      rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: #212121;
+    float: left;
+    margin-right: 20px;
+  }
+}
 </style>
