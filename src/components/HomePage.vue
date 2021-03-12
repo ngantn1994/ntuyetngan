@@ -177,6 +177,9 @@ export default {
   props: {
     msg: String,
   },
+  created() {
+    window.scrollTo(0, 0);
+  },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
     this.sectionHeight = Number(getComputedStyle(document.getElementsByClassName('section-container')[0]).height.slice(0, -2));

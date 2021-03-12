@@ -1,0 +1,65 @@
+<b>On December 4 of 2017, Google released a Doodle to celebrate 50 years of Kids Coding. It was not the first time I saw a Programming game, but since it was "the Google Doodle", everyone was talking about it, and the idea became more popular than it ever was.
+</b><br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog3_3.png"/><br>
+<i>The Google Doodle can be found <a target="_blank" style="color: blue;" href="https://g.co/doodle/ygxau2?ds=cl">here</a></i>
+</center>
+<br>
+I remember at that time, I searched the Steam store, found some programming games, and decided that I would purchase them on the next Steam sale. There were only less than 10 of them at that time, and only 3 of them had good quality. When I tried to find games with the "Programming" tag again today, the number of results surprised me, and there are many good titles. I don't think I'll be able to play them soon, but I appreciate the programmers who made them, and I think it will be a good experience for programmers to check them out.
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog3_0.png"/><br>
+<i>A quick search on Steam right now</i>
+</center>
+<br>
+So here are the games that I bought and tried.
+<br>
+<h2>1. while True: learn()</h3>
+<iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/619150/" frameborder="0" width="646" height="190"></iframe>
+<br><br>
+We had a must-take class on Machine Learning back when I was still in the university, and it was the hardest class that I had ever take. Our professor was very strict, and the lessons were Mathematics-heavy, so the practice sessions with Mathlab were not well received by the students. And more than half of my class failed the subject. I passed, with a terrible mark that pulled my total GPA down, but I didn't retake the class. (And I still regret it now, not because of the GPA, but because I missed the chance to study it properly).
+<br><br>
+That's why when I saw the description of this game, I knew that I must get it.
+<br><br>
+The UI is nice, the problems are presented nicely and the editor is pleasant to use. I don't need to write any real code, but I feel like I was coding. You can copy and paste components like a drag-and-drop tool, and save the components you created to use in the later problems. From my basic level of knowledge about Machine Learning, the problems are well-chosen and close to real problems. To get the perfect score on some levels, I did them in an over-fitting way, which reminded me of the time my professor taught us about these concepts and raise my curiosity to do more research on the algorithm.
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog3_1.jpg"/><br>
+<i>Each problem has well-written instruction on how to use the node</i>
+</center>
+<br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog3_2.jpg"/><br>
+<i>Multiply components can be selected to copy and paste, and there is even version control too!</i>
+</center>
+<br>
+The creator of this game also has an early-access game that is also about machine learning, and I'll definitely buy it next.
+<br><br>
+(For Steam game Summer sale and Christmas sale are a good buying periods so I usually bought a lot during those time to play later. And I ended up with lots of games that I haven't even touch in my library TTvTT).
+<br>
+<h2>2. SHENZEN I/O</h3>
+I saw the UI nicely presented with components and stuff, so I bought this game without reading the description carefully (since it was on 50% sale), expected it would be similar to while True: learn. And I was deadly wrong. SHENZEN I/O is a real coding game with real code needed, and the language used in the game is similar to assembly. Yes. It's an <b>assembly</b> coding game.
+<br><br>
+<iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/504210/" frameborder="0" width="646" height="190"></iframe>
+<br><br>
+To be honest, this game almost scares me off. My first impression is the UI feels nice, it has buttons and stuffs nicely presented. And then I clicked on the "Datasheet" button. Nothing happens. I clicked it some more times then tried to play the first level, and then alt-tab outside to find assembly tutorial. That's when I realized that each time I click the Datasheet button, it opened up a 47-pages-pdf outside of the game. 47 pages manual. I was like WTF? Assembly, then this manual? Almost scares me off.
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog3_4.png"/><br>
+<i>One page of the manual ಠ_ಠ</i>
+</center>
+<br>
+But that was the start of the fun part. The manual is definitely a must-read. I won't spoil the details, but the sense of humor in this game is great, so I enjoyed it. I haven't completed it, but I have high expectations for the story of this game, so I'll continue to play it instead of getting myself spoiled.
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog3_5.jpg"/><br>
+<i>The first task for the fresh meat - a "fake" security camera</i>
+</center>
+<br>
+And that's it for the games that I have tried. I still have tons of games that I haven't played yet, so it's gonna take a long time for me to finish all of these games (especially with programming games). In the future if I play any new games, I'll review them too.
+<br><br>
+I'll conclude this post with the games that I would give a try next when I have time. Hopefully, it can help you find something that you might be interested in :3
+<br><br>
+<iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/984800/" frameborder="0" width="646" height="190"></iframe>
+<br><br>
+<iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/792100/" frameborder="0" width="646" height="190"></iframe>
+<br><br>
+<iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/558990/" frameborder="0" width="646" height="190"></iframe>
+<br><br>
+<iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/1150090/" frameborder="0" width="646" height="190"></iframe>
+<br><br>
+<iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/286300/" frameborder="0" width="646" height="190"></iframe>

@@ -1,10 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Blog from '../views/Blog.vue';
-import BlogPost from '../components/BlogPost.vue';
-import UnfinishedPage from '../components/UnfinishedPage.vue';
-import SiteMap from '../components/SiteMap.vue';
 
 Vue.use(VueRouter);
 
@@ -17,17 +13,17 @@ const routes = [
   {
     path: '/blog',
     name: 'Blog',
-    component: Blog,
+    component: () => import(/* webpackChunkName: "blog" */ '../views/Blog.vue'),
   },
   {
     path: '/wip',
     name: 'WIP',
-    component: UnfinishedPage,
+    component: () => import(/* webpackChunkName: "wip" */ '../components/UnfinishedPage.vue'),
   },
   {
     path: '/blog/:id',
     name: 'BlogPost',
-    component: BlogPost,
+    component: () => import(/* webpackChunkName: "blogpost" */ '../components/BlogPost.vue'),
     props: true,
     beforeEnter(to, from, next) {
       const isValid = Number.isInteger(Number(to.params.id));
@@ -36,7 +32,8 @@ const routes = [
   },
   {
     path: '*',
-    component: SiteMap,
+    name: 'sitemap',
+    component: () => import(/* webpackChunkName: "wip" */ '../components/SiteMap.vue'),
   },
 ];
 
