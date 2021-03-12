@@ -25,17 +25,15 @@ export default {
       type: Number,
       required: true,
     },
-    data() {
-      return {
-        id: null,
-      };
-    },
-    mounted() {
-      /* eslint no-underscore-dangle: 0 */
-      this.id = this._uid;
-    },
+  },
+  data() {
+    return {
+      id: null,
+    };
   },
   mounted() {
+    /* eslint no-underscore-dangle: 0 */
+    this.id = this._uid;
     const container = document.getElementById('flip-box-container');
     const normalState = document.getElementById(`normal-state-${this.uniqueIndex}`);
     const hoverState = document.getElementById(`hover-state-${this.uniqueIndex}`);

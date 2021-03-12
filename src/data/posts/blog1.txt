@@ -1,6 +1,6 @@
 <b>It's the start of March, and it's getting warmer every day. A quarter of the year is almost ended, but for Vietnamese, it's still the first month of the Lunar New Year. For us, the start of Lunar New Year is the most important day of the year (which is our "Tet holiday"), and we celebrate it with a lot of activities. One of them is to write the first piece of the year, which is marked as the "Pen-opening" piece.</b>
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog1_0.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog1_0.jpg"/><br>
 <i>"Ông đồ" which usually can be found on Vietnam's street in the first 3 days of Lunar New Year</i>
 </center>
 <br>
@@ -12,7 +12,7 @@ But on top of everything, a Kanji piece always gives the most "Tet feeling".
 <br><br>
 Since my childhood, I always love the Kanji pieces a lot. Black ink on red paper, it feels festive, and it reminds me of the Tet holidays when I was young, and my parents take me to the street vendors to get a Kanji piece. So this year, because of the Covid situation, I can't go home on the Tet holiday, so we decided to write our own Kanji piece as a "Pen-opening" piece.
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog1_1.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog1_1.jpg"/><br>
 <i>One of my first nice-looking attemp ٩꒰• ε •꒱۶⁼³</i>
 </center>
 <br><br>
@@ -20,7 +20,7 @@ I bought a pen set on Amazon, then realize there are cheaper pens in the 100 yen
 <br>
 Anyway, it was exciting to wake up on the first day of the year, and setting up for a caligraphy show.
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog1_2.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog1_2.jpg"/><br>
 <i>My husband is making his "Pen-opening" piece :3</i>
 </center>
 <br><br>
@@ -30,6 +30,6 @@ The second Covid year started, and the first one was not an easy one for all of 
 <br><br>
 Be strong today, be happier tomorrow.
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog1_3.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog1_3.jpg"/><br>
 <i>My final piece for this Tet Holiday - Happy New Year!</i>
 </center>

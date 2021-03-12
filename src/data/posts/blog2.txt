@@ -1,6 +1,6 @@
 <b>Vietnam street food is famous for its cheap price and delicious taste. Usually, we grab a meal at a street vendor for breakfast, and one of my favorites is "Xôi xéo" - sticky rice with cooked green bean, shredded fish-sauce flavored meat, and crispy fried purple onion. It's delicious, and a portion of 5000 dongs (which is about 25 yen) is enough because eating sticky rice will make you full for a long time.</b>
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog2_0.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog2_0.jpg"/><br>
 <i>"Xôi xéo" usually be wrappped in banaba tree's leaf, and sold as breakfast</i>
 </center>
 <br>
@@ -10,13 +10,13 @@ And then, I have my business trips to Singapore, then Japan, and now came to Jap
 <br><br>
 I was not able to find purple onion here, so there are a lot of dishes that I won't be able to recreate. Until I came upon this baby, I was overjoyed because there are so many meals I'll be able to cook now.
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog2_1.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog2_1.jpg"/><br>
 <i>Crispy Fried Onion sold in the supermarket, which is almost as good as what I had back home</i>
 </center>
 <br>
 To cook "Xoi xeo", first of all, I'll need to make "ruoc" (the shredded meat) first. I bought our Vietnamese fish sauce from Amazon and made a big bottle of it. It's not a hard dish, but the part to stir the shredded meat on a low-heat pan until it has a nice yellow cost me more than 1 hour. It's impossible to shorten the time because the bigger heat will burn the meat and it will lose its softness.
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog2_5.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog2_5.jpg"/><br>
 <i>The "ruốc" I made on top of rice</i>
 </center>
 <br>
@@ -24,7 +24,7 @@ And that's when I realize why Vietnamese dishes are harder to cook here. Not onl
 <br>
 And in "Xoi xeo"'s case, making the green bean's ball is the hardest part.
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog2_3.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog2_3.jpg"/><br>
 <i>"Green bean ball" is being cut by the shopkeeper</i>
 </center>
 <br>
@@ -32,7 +32,7 @@ In street vendors, the shopkeeper lady will use a knife to cut the green bean ba
 <br><br>
 The peeling part is hard, but it's easy to buy skinless green beans now, so it's not a problem. The real problem is the ball-forming part. My mom did this since she was young, so she made it looks easy to do. But the truth is, it's really hard to maintain the power of your hand to be able to push all the air outside of the ball when at the same time, not break it. I almost failed, but luckily, I remembered how mom always tells me to form the ball when the beans were still hot, so if I failed, I only need to put the beans in the pan and stir it again, then try again. It took me almost one hour for this small little dude.
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog2_4.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog2_4.jpg"/><br>
 <i>My final "Green bean ball"</i>
 </center>
 <br>
@@ -42,14 +42,14 @@ Thanks to having the chance to go abroad, I realize the value of what I have at 
 <br><br>
 I'll be making Xoi xeo again this weekend.
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog2_6.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog2_6.jpg"/><br>
 <i>Green beans need to be dipped in water over night first, then cooked on low heat until soft, before it can be formed to the ball.</i>
 </center>
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog2_7.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog2_7.jpg"/><br>
 <i>Sticky rice (Mochi rice) too needs to be dipped in water over night. To make it yellow, turmeric powder was added in the water.</i>
 </center>
 <br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="./static/images/blog2_8.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog2_8.jpg"/><br>
 <i>My final product. Itadakimasu~~</i>
 </center>

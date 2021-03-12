@@ -4,6 +4,7 @@ import Home from '../views/Home.vue';
 import Blog from '../views/Blog.vue';
 import BlogPost from '../components/BlogPost.vue';
 import UnfinishedPage from '../components/UnfinishedPage.vue';
+import SiteMap from '../components/SiteMap.vue';
 
 Vue.use(VueRouter);
 
@@ -33,9 +34,14 @@ const routes = [
       next(isValid);
     },
   },
+  {
+    path: '*',
+    component: SiteMap,
+  },
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes,
 });
 

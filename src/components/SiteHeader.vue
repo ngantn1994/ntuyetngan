@@ -34,7 +34,7 @@
           Blog
         </div>
       </router-link>
-      <router-link to="/">
+      <router-link to="/wip">
         <div class="mobile-menu-item">
           Works
         </div>

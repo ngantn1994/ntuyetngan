@@ -11,12 +11,16 @@
         <div class="post-clear"></div>
       </div>
       <div class="post-content" v-html="blogHtml"></div>
+      <div class='comments'>
+        <Disqus :pageConfig="pageConfig"/>
+      </div>
     </div>
     <div class="bottom-info">© 2021 Nguyen Tuyet Ngan. All rights reserved.</div>
   </div>
 </template>
 
 <script>
+import { Disqus } from 'vue-disqus';
 import SiteHeader from '@/components/SiteHeader.vue';
 import blogTitles from '../data/blogTitle';
 import blogPosts from '../data/blogPosts';
@@ -25,6 +29,7 @@ export default {
   name: 'BlogPost',
   components: {
     SiteHeader,
+    Disqus,
   },
   props: {
     id: {
@@ -46,13 +51,20 @@ export default {
     }
 
     /* eslint no-plusplus: 0 */
-    for (let index = 0; index < blogTitles.length; index++) {
+    for (let index = 0; index < blogTitles.data.length; index++) {
       /* eslint eqeqeq: 0 */
-      if (blogTitles[index].id == this.id) {
-        this.blogInfo = blogTitles[index];
+      if (blogTitles.data[index].id == this.id) {
+        this.blogInfo = blogTitles.data[index];
         break;
       }
     }
+  },
+  computed: {
+    pageConfig() {
+      return {
+        title: this.blogInfo.title,
+      };
+    },
   },
   data() {
     return {
@@ -127,6 +139,12 @@ export default {
 .post-content {
   font-size: min(3vw, 22px);
   text-align: justify;
+}
+.comments {
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #33B4D7;
 }
 .bottom-info {
   background: #33B4D7;

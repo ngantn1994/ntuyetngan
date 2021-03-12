@@ -920,6 +920,10 @@ export default {
     left: calc(15% - 150px);
     transform: none;
   }
+  .skill-tag-container {
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
 }
 @media only screen and (min-width: 1060px) and (min-height: 800px) {
   .portrait-box {
@@ -952,6 +956,7 @@ export default {
   }
   .skill-tag-container {
     top: calc(50% - 175px);
+    transform: none;
   }
 }
 </style>
