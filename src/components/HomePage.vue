@@ -202,6 +202,8 @@ export default {
     handleScroll() {
       // console.log(window.scrollY);
       this.scrollValue = window.scrollY;
+      this.currentSection = Math.min(this.texts.sections.length,
+        parseInt(this.scrollValue / 500, 10) + 1);
 
       // section 1
       const portraitMoveBox = document.getElementById('portrait-move-box');
@@ -280,8 +282,8 @@ export default {
         contactMoveBox.style.opacity = '0%';
       }
 
-      this.currentSection = Math.min(this.texts.sections.length,
-        parseInt(this.scrollValue / 500, 10) + 1);
+      // this.currentSection = Math.min(this.texts.sections.length,
+      //   parseInt(this.scrollValue / 500, 10) + 1);
     },
     handleSelectSection() {
       window.scrollTo(0, (this.currentSection - 1) * 500);
