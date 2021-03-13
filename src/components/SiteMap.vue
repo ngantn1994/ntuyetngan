@@ -20,6 +20,9 @@ import siteMaps from '../data/siteMap';
 
 export default {
   name: 'SiteMap',
+  metaInfo: {
+    title: 'ntuyetngan\'s sitemap',
+  },
   components: {
     SiteHeader,
     FancyBox,

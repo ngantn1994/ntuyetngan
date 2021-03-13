@@ -13,6 +13,9 @@ import SiteHeader from '@/components/SiteHeader.vue';
 
 export default {
   name: 'UnfinishedPage',
+  metaInfo: {
+    title: 'Work in Progress...',
+  },
   components: {
     SiteHeader,
   },

@@ -156,6 +156,7 @@
 
 <script>
 import textdata from '../data/textdata';
+import metadata from '../data/homemeta';
 import projectsArray from '../data/projects';
 import contactsArray from '../data/contacts';
 import skillsArray from '../data/skilltags';
@@ -167,6 +168,10 @@ import FlipBox from '../parts/FilpBox.vue';
 
 export default {
   name: 'HomePage',
+  metaInfo: {
+    title: 'Nguyen Tuyet Ngan\'s resume',
+    meta: metadata,
+  },
   components: {
     BottomCounter,
     FancyTitle,
