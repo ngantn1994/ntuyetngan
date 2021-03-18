@@ -22,7 +22,7 @@
         </li>
         <li :class="{'nav-item': true, 'nav-item-active': activeText === 'wip',
           'is-mobile-hidden': true }">
-          <router-link to="/wip">
+          <router-link to="/works">
             <NavText text="Works"/>
           </router-link>
         </li>
@@ -34,7 +34,7 @@
           Blog
         </div>
       </router-link>
-      <router-link to="/wip">
+      <router-link to="/works">
         <div class="mobile-menu-item">
           Works
         </div>

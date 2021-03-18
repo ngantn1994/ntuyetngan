@@ -9,6 +9,11 @@ const siteMap = [
     background: '../static/images/blog.png',
     link: 'Blog',
   },
+  {
+    name: 'Works',
+    background: '../static/images/works.png',
+    link: 'Works',
+  },
 ];
 
 export default siteMap;

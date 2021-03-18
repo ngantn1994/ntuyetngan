@@ -16,6 +16,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "blog" */ '../views/Blog.vue'),
   },
   {
+    path: '/works',
+    name: 'Works',
+    component: () => import(/* webpackChunkName: "works" */ '../views/Works.vue'),
+  },
+  {
     path: '/wip',
     name: 'WIP',
     component: () => import(/* webpackChunkName: "wip" */ '../components/UnfinishedPage.vue'),
@@ -34,6 +39,11 @@ const routes = [
     path: '*',
     name: 'sitemap',
     component: () => import(/* webpackChunkName: "wip" */ '../components/SiteMap.vue'),
+  },
+  {
+    path: '/cssgen',
+    name: 'CSSGen',
+    component: () => import(/* webpackChunkName: "cssgen" */ '../views/CssGenerator.vue'),
   },
 ];
 
