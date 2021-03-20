@@ -55,7 +55,6 @@ export default {
 .image-box {
   width: 400px;
   height: 300px;
-  background-size: 100%;
   position: relative;
   box-shadow: #33B4D7 10px 10px 0px -3px, rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;

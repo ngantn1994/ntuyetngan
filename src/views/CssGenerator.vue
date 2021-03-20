@@ -11,9 +11,13 @@
       </div>
       <div class="feature-content">
         <ul class="feature-items">
-          <li>text-shadow</li>
-          <li>box-shadow</li>
+          <li>shadow generator</li>
           <li>gradient background</li>
+          <li>transform 2D</li>
+          <li>border-radius</li>
+          <li>CSS filter</li>
+          <li>flexbox container</li>
+          <li>... and also some snippets for quick use</li>
         </ul>
       </div>
     </div>
