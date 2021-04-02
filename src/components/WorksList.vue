@@ -48,10 +48,14 @@ export default ({
   left: 0px;
   padding-top: 80px;
   padding-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .work-item-wrapper {
   margin: auto;
   width: fit-content;
+  width: 420px;
   max-width: 100%;
 }
 .work-item {

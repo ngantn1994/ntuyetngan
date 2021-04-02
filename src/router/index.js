@@ -45,6 +45,11 @@ const routes = [
     name: 'CSSGen',
     component: () => import(/* webpackChunkName: "cssgen" */ '../views/CssGenerator.vue'),
   },
+  {
+    path: '/binderpad',
+    name: 'BinderPad',
+    component: () => import(/* webpackChunkName: "binderpad" */ '../views/BinderPad.vue'),
+  },
 ];
 
 const router = new VueRouter({
