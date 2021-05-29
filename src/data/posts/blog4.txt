@@ -1,0 +1,51 @@
+<b>It's 2021 and based on the data, the trend, etc, it's not the best time to talk about old languages. But even until now, Java and PHP are the languages that made the biggest impact on my life, and on a random day like today, I just feel like talking about them.
+</b><br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/thumb-4.jpg"/><br>
+</center>
+<br>
+Nowadays cool kids would claim that they are learning python or golang, or of course javascript, the high-level and easy-to-use yet powerful programming languages. I get it. I fully understand why they are cool, and how old-schooled semi-colon freak like me might be outdated soon if I don't try my hardest to keep up with the trend.
+<br><br>
+Getting back on job searching after stayed in the same position for a long time really gave me a slap on my face. I always know that what I'm using is partly outdated, but to the extent that I found out on job searching, it did scare me well. Even to companies who are trying their best to keep up with the trend in the language they are using, there might be a good chance that the language itself will be outdated.
+<br><br>
+I feel old thinking that instead of high ambition like before, now my long-term goal is simple. To keep up with the changes and keep updating my knowledge to stay in this industry until the day I retired. Even once I never think about quit being a programmer, because I just really love coding, but I'm just the average programmer you can find anywhere, so one day even if I don't want to, I might be eliminated from the position.
+<br><br>
+But today I won't talk about that. Even if things changed, there will be things that won't change, like how you won't forget your first love. I will be talking a lot more about Java - the love of my life - in the future, but today, let me tell you the story about the two languages that made me a web developer - Java and PHP.
+<br><br>
+<center><iframe style="max-width: 100%;" width="560" height="315" src="https://www.youtube.com/embed/4LFYtpLrAZw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<i>"Long ago, but not so very long ago. World was different, oh yeah it was ..."</i>
+</center>
+<br>
+When trying to find web hosting, there are plenty of free options to host a PHP application. Because PHP is an interpreted language. The code gets executed directly on run time, and the application is lightweight and easy to update.
+<br><br>
+Meanwhile, Java is a compiled language. The idea of the Java language and Java Virtual Machine was a great idea at the time it was introduced, but now in the modern-day, the requirement of having to install JVM on every client machine to run a Java app became a bad idea. Of course, Java web application is not the same as a jar file, but still, it needs to be compiled before running and needs an Application Server to support its life circle. For every code update, the server-side app needs to be compiled again.
+<br><br>
+So Java web hosting is costly and a free option is harder to find, also harder to set up properly. But on a large scale, big corporations would choose Java for better performance and stability. The language is trustworthy (PHP is not, nope) and it has amazing properties that protect its system. Well, I'm in love with Java anyway, so my words might not be a good source, but it's not hard to find the proof for this claim.
+<br><br>
+As for me, Java is like my mother tongue language. It's not my first programming language (Pascal is my first), but it's the first one that I learn properly at CIS classes, and it's the one that guides me through most of the concepts of programming.
+<br><br>
+I still remember the first time I learn about Java Iterators. It felt magical. By implementing an Interface, two unrelated Objects of different types can be compared, then sorted properly, and manage in a beautiful way. For me it was like a whole new world, I didn't know that I can think in that way, use the language in that way, and I thought that the language is so beautiful that I fell in love. I love how Java is a well-built language for Object-Oriented programming. I grew up (as a programmer!) thinking I need to protect my children (the objects) properly by encapsulating them in the right way. I love to think about how to build my abstract objects to use them later in factories and stuff. And I absolutely love playing with Iterators and Comparators - they were the catalysts for my love after all.
+<br><br>
+And then I met PHP. Even though it was easy to use from the start (a lot more than Java), I absolutely hate it. I don't hate it now, as I came to think of all languages as a unique star with their own pros and cons and I can work with any language. But at the time, I can't stand how 0 equals null, and how a not nested properly piece of code can still work. Good old times.
+<br><br>
+But then the first deployable web application that I made was a PHP one. I learned a bit about Spring in my third year but still couldn't escape from an IDE-run-only application. And then life decided to give me PHP. My first internship at a company was about using PHP in wordpress and writing themes and plugins. After that summer, I came back to school and had a PHP project assignment, which I did perfectly and get the top score of the class. (Well, at that time, I thought that I aced it with cools features, only to read the code after a few years and questioning myself how the $%#@ did I wrote that shit).
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog4_0.jpg"/><br>
+<i>Hopefully ...</i>
+</center>
+<br>
+And as naive and inexperienced as I was at the time of graduation, I didn't think I will get the chance to work with Java again. At the time most of my friends who continue to works with Java are android developers, while I was not and only have the skills to work with webs. To be honest, I was totally clueless about what I should do and was going to accept just any position that would accept me. Because at the time, even though I was at the top of my class, companies (in my country) tends to think that female student should become tester instead of coder, and there are companies that reject female students even before looking at their CVs. And furthermore, even for my male friends, they would become whatever the job needs them, .NET or Objective C, just whatever.
+<br><br>
+(Also in Vietnam most IT companies are out-sourcing companies, so developers usually work with lots of different projects and different languages. Wide range of experiences, but usually no code-quality control.)
+<br><br>
+When life gives you lemons, make lemonade. I was lucky to join Koei Tecmo Games at the time, get a really good salary and have the chance to work in the game industry (which I absolutely love to!). And the best part is, continue to work with Java and PHP.
+<br><br>
+Time passed, and life decided to take back the lemons and give me other fruits this time. A new opportunity, and again, hello PHP. You are a lot more beautiful now sweetie and I'm looking forward to working with you in the future. But you know, Java will always be the one I truly love. I'm not sure if I would have enough time to continue to pursue the path of Java in the future, but I just know that I can't stop here.
+<br><br>
+One day Java might become a bad choice, and soon, maybe both companies won't look for Java or PHP developers. But it always feels good to chase after the changes of a programming language. Because as the language grows, we too will grow. Understanding the thought of others and reading passages of code would always be amazing. One day the language might stop growing as its life circle stopped, but the growth it gave stayed with us. And golden time would always stay with us, as we become better people, memories that made us who we are becoming a part of us that even if we don't remember it every day, it won't fade away.
+<br><br>
+But well, that a story for the future. At the moment I'll still be working with PHP, and still have a lot to learn with Java, and will continue to chase after the language. Both of the languages still have a lot for me to discover. I met them during my school day, and life let me have the chances to be with them until today, I will choose to continue having them in my life. Life is long, the road would be hard, but one day, hopefully, I can look back and smile that thankfully I still have them in my life at that time.
+<br><br>
+<center><iframe style="max-width: 100%;" width="560" height="315" src="https://www.youtube.com/embed/5tXh_MfrMe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+<i>"Life is a highway, I won't drive it all night long. But if you're going my way, I wanna drive it all night long, yeah."</i>
+</center>
+<br>
