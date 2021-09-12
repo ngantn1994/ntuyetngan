@@ -42,23 +42,39 @@
           <div class="big-title experience-smaller-title
             show-on-smaller-screen" v-html="texts.experiences"></div>
           <div class="experience-box">
-            <div class="company-logo"><img src="../assets/kt-logo.png"/></div>
-            <div class="period-box">
-              <div class="calendar-block" v-html="texts.periodStart"></div>
-              <div class="arrow-block" v-html="texts.periodArrow"></div>
-              <div class="calendar-block" v-html="texts.periodEnd"></div>
+            <div class="company-box">
+              <div class="company-logo"><img src="../assets/kt-logo.png"/></div>
+              <div class="period-box">
+                <div class="calendar-block" v-html="texts.periodStart"></div>
+                <div class="arrow-block" v-html="texts.periodArrow"></div>
+                <div class="calendar-block" v-html="texts.periodEnd"></div>
+              </div>
+              <div class="clear-box"></div>
+              <div class="company-name-box">
+                <div class="company-name" v-html="texts.companyName"></div>
+                <div class="company-position" v-html="texts.jobTitle"></div>
+              </div>
+              <div class="experience-break"></div>
+              <div class="position-details">
+                <div v-html="texts.positionDetail"></div>
+                <br>
+                <div class="blue-bold-text" v-html="texts.overseaTitle"></div>
+                <div v-html="texts.overseaDetails"></div>
+              </div>
+              <div class="experience-break"></div>
             </div>
-            <div class="clear-box"></div>
-            <div class="company-name-box">
-              <div class="company-name" v-html="texts.companyName"></div>
-              <div class="company-position" v-html="texts.jobTitle"></div>
-            </div>
-            <div class="experience-break"></div>
-            <div class="position-details">
-              <div v-html="texts.positionDetail"></div>
-              <br>
-              <div class="blue-bold-text" v-html="texts.overseaTitle"></div>
-              <div v-html="texts.overseaDetails"></div>
+            <div class="company-box">
+              <div class="company-logo"><img src="../assets/zaiko-logo.png"/></div>
+              <div class="period-box">
+                <div class="calendar-block" v-html="texts.periodStart2"></div>
+                <div class="arrow-block" v-html="texts.periodArrow2"></div>
+                <div class="calendar-block" v-html="texts.periodEnd2"></div>
+              </div>
+              <div class="clear-box"></div>
+              <div class="company-name-box">
+                <div class="company-name" v-html="texts.companyName2"></div>
+                <div class="company-position" v-html="texts.jobTitle2"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -90,9 +106,12 @@
           <div class="company-name-mobile" v-html="texts.companyName"></div>
           <div class="company-position-mobile" v-html="texts.jobTitle"></div>
           <div v-html="texts.positionDetail"></div>
-          <br>
           <div class="blue-bold-text" v-html="texts.overseaTitle"></div>
           <div class="bottom-border" v-html="texts.overseaDetails"></div>
+          <div class="big-mobile-title" v-html="texts.currentPosition"></div>
+          <div class="company-name-mobile" v-html="texts.companyName2"></div>
+          <div class="company-position-mobile" v-html="texts.jobTitle2"></div>
+          <div class="bottom-border" v-html="texts.positionDetail2"></div>
           <div class="big-mobile-title" v-html="texts.certificatesTitle"></div>
           <div v-for="(certificate, index) in texts.certificates" :key="index">
             <div v-html="certificate"></div>
@@ -555,6 +574,10 @@ export default {
   background-color: #FFF;
   box-shadow:#212121 10px 10px 0px -3px,
    rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.company-box {
+  position: relative;
+  padding-bottom: 10px;
 }
 .company-logo {
   display: block;

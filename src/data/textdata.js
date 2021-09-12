@@ -15,13 +15,20 @@ const homedata = {
   certificates: ['FUNDAMENTAL INFORMATION TECHNOLOGY ENGINEERS EXAMINATION (FE)<br>', 'TOEIC <b>975</b>'],
   pdfResume: '📝 PDF Resume',
   pdfLink: './nguyentuyetngan_cv.pdf',
-  skillShortIntro: 'Experience in Full-Stack Web Development with Java and PHP back-end, and eager to learn any technologies or procedures that the job would require. Completing tasks with the highest quality is my priority, and I want to devote myself to work that can inspire its users.<br><br>(Currently living in Kanagawa, Japan. Looking for remote positions, or positions in the Kanto region.)',
+  skillShortIntro: 'Experience in Full-Stack Web Development with Java and PHP back-end, and eager to learn any technologies or procedures that the job would require. Completing tasks with the highest quality is my priority, and I want to devote myself to work that can inspire its users.<br><br>Currently I am living in Kanagawa (Japan), and I interests in positions within the Kanto region, or remote positions.',
   bottomDisclaimer: 'Powered by VueJS - Hosting by Amazon S3<br>© 2021 Nguyen Tuyet Ngan. All rights reserved.<br>CSS background by www.heropatterns.com',
   bottomMobile: '© 2021 Nguyen Tuyet Ngan. All rights reserved.',
   education: 'Education',
   experiences: 'Experiences',
   certificatesTitle: 'Certificates',
   skillTags: 'Skill Tags',
+  companyName2: 'ZAIKO株式会社',
+  jobTitle2: 'Full stack Developer for In-house livestream platform',
+  periodStart2: 'MAY<br>2021',
+  periodArrow2: '🠖<br>current<br>position',
+  periodEnd2: 'NOW<br>🏡💻',
+  positionDetail2: '(Details will be described in my CV)',
+  currentPosition: 'Current position',
 };
 
 export default homedata;
