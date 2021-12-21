@@ -1,0 +1,61 @@
+<b>419. The infamous error code that might give hours of headache to the pitiful programmers (or not). In many of the reason that 419 might happens, today, I want to talk about cors. The deadly error that personally, I think it does not makes much sense security wise (and it's really doesn't). But as a web developer, a slave of the browser, it's always a fun topic to talk about.
+</b><br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/thumb-5.jpg"/><br>
+</center>
+<br>
+Usually on a working and running project, when cors error appear, it's time to check the config files. If the cors was not set up properly, just how can we start the development? So most of the time, I don't think we would need to worry about cors settings.
+<br>
+Many template projects might already handled cors settings already (and honestly, I don't understand why not). But since each project's infrastructure and purpose would be different, sometimes it's required to set up cors policy by ourselves.
+<br><br>
+<h2>1. What is this little trouble maker?</h2>
+<br><br>
+Instead of copy pasting the definition, it might be better for me to just grab the MDN docs and paste it here. And here it is <a>https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/</a>.
+<br>
+But on a random beautiful day when everything is working fine, I don't think you would go through the trouble to read all the details then forget about it. So let me recap it in the way I understand it.
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog5_0.png"/><br>
+<i>And then the delivery man silently discard the package from "Holulululu". Such a pity, isn't it?</i>
+</center>
+<br>
+On browser, request from a domain (which is the currently opening URL) to another domain is consider cross-origin requests. Someone doing something fishy with their own home? Not my business, browser said. But if someone trying to send something suspicious to someone else's address, hmmm, I must stop you so you from the root so you won't be able to send it at all, by double checking with the recipient if they want your package or not.
+<br>
+Before sending a request with a heavy body included to another site, modern browsers will send a request to server to confirm if they should send it or not first, which is a preflight request. The recipient server will answer the preflight with a <b>Access-Control-Allow-Origin</b>, which will let browser - the self-proclaimed police knows if they should send this request with package or not. Based on server settings, the result might be different. But I think you already got the simple idea of it.
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog5_1.png"/><br>
+<i>The actual conversation should be more like this, bots talking to each other.</i>
+</center>
+<br>
+Sounds totally great, isn't it? But the self-proclaimed police, the browser, is the one who made this rule. So anyone else who is sending packages through another delivery service, for example, the bad boy postman or delivery it themselves somehow, will drop the package off at the address anyway. Only the naive citizens, the ones that are following the rules and behaving well would send their package through browsers. All the bad people - the real bad ones, not some little troublemaker children next door - will always drop the package off as they want to through another means anyway.
+<br>
+<br><br>
+<h2>2. Then why making things more complicated?</h2>
+<br><br>
+Let me just quote a mighty friend form stackoverflow here.
+<br>
+<h3>The key insight is that preflight requests are not a <b>security</b> thing. Rather, they're a <b></b>not-changing-the-rules</b> thing.</h3>
+<br>
+I'll leave it to you to find out more about this. But in short, cors policies make sure users can't do what they should not be able to do, and that's it. Someone trying to bring your whole feature back to their site and using your server resources? Gtfo. And it also blocks a potential large number of unwanted requests to the server.
+<br>
+Security wise? Cors policy is a piece of cake to surpass. Some scenarios benefit from the preflight mechanism. But to make your server secure, a lot of works would be needed, as usual.
+<br><br>
+<h2>3. Simple request</h2>
+<br><br>
+As I mentioned above, only "a request with a heavy body" would trigger a preflight. The delivery guy would just confirm if it's a package, he will always deliver those trash-spam letters anyway, since they are harmless.
+<br>
+So <b>Simple Requests</b>, which definition can be found here <a>https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#simple_requests</a> are the ones that is considered harmless and won't trigger preflight. Which means, if you normalize your json as a string, sending it with a POST request won't even be checked, it'll reach the server.
+<br>
+Which means in some case, if you don't want to changes your server's cors policy, or don't want to implement a complex cors policies response system, you can just try to make simple requests, with rules to follow and rules to unpack on server side. Just to surpass the self-proclaimed police, who is applying his own justice on the people who decided to use his service.
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog5_2.jpg"/><br>
+<i>It actually works! Trust me.</i>
+</center>
+<br>
+But then what if someone figuring out how to send malicious content to our server this way? What if backend use these raw text for some exotic-yet-dangerous purpose? What is the point of setting up cors block if you would use a trick to surpass it? I'll leave it up to your imagination.
+<br><br>
+<h2>4. Conclusion</h2>
+<br><br>
+It feels not completed to conclude this problem here, but I'll leave it to your own case to judge it. Because - you might never need to touch cors-policy-level code anyway, or you will be benefit from simple request, so I think I reached my goal of talking about theses two for now. I would love to discuss about it more, so please let me know what you think and let's talk about it!
+<br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog5_3.jpg"/><br>
+<i>It actually works! Trust me.</i>
+</center>
