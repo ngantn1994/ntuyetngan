@@ -12,7 +12,7 @@ I remember at that time, I searched the Steam store, found some programming game
 <br>
 So here are the games that I bought and tried.
 <br>
-<h2>1. while True: learn()</h3>
+<h2>1. while True: learn()</h2>
 <iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/619150/" frameborder="0" width="646" height="190"></iframe>
 <br><br>
 We had a must-take class on Machine Learning back when I was still in the university, and it was the hardest class that I had ever take. Our professor was very strict, and the lessons were Mathematics-heavy, so the practice sessions with Mathlab were not well received by the students. And more than half of my class failed the subject. I passed, with a terrible mark that pulled my total GPA down, but I didn't retake the class. (And I still regret it now, not because of the GPA, but because I missed the chance to study it properly).
@@ -33,7 +33,7 @@ The creator of this game also has an early-access game that is also about machin
 <br><br>
 (For Steam game Summer sale and Christmas sale are a good buying periods so I usually bought a lot during those time to play later. And I ended up with lots of games that I haven't even touch in my library TTvTT).
 <br>
-<h2>2. SHENZEN I/O</h3>
+<h2>2. SHENZEN I/O</h2>
 I saw the UI nicely presented with components and stuff, so I bought this game without reading the description carefully (since it was on 50% sale), expected it would be similar to while True: learn. And I was deadly wrong. SHENZEN I/O is a real coding game with real code needed, and the language used in the game is similar to assembly. Yes. It's an <b>assembly</b> coding game.
 <br><br>
 <iframe style="max-width: 100%;" src="https://store.steampowered.com/widget/504210/" frameborder="0" width="646" height="190"></iframe>
