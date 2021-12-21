@@ -2,7 +2,7 @@ import blog1 from 'raw-loader!./posts/blog1.txt';
 import blog2 from 'raw-loader!./posts/blog2.txt';
 import blog3 from 'raw-loader!./posts/blog3.txt';
 import blog4 from 'raw-loader!./posts/blog4.txt';
-import blog4 from 'raw-loader!./posts/blog5.txt';
+import blog5 from 'raw-loader!./posts/blog5.txt';
 
 const blogPosts = [
   {
