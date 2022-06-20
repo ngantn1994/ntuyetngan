@@ -1,4 +1,4 @@
-<b>Using composer might not always be the best for Windows user. I don't like having manually install packages, using tools like chocolatey, or running <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: monospace;">composer install --ignore-platform-reqs</span> all the time. So I decided to start from scratch with WSL.
+<b>Using composer might not always be the best for Windows user. I don't like having manually install packages, using tools like chocolatey, or running <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">composer install --ignore-platform-reqs</span> all the time. So I decided to start from scratch with WSL.
 </b><br><br>
 <center><img style="max-width: 100%; max-height: 600px;" src="../static/images/thumb-6.jpg"/><br>
 </center>
@@ -14,3 +14,88 @@ The thing is on actual deployment environment, you might not want to use it at a
 Development-wise, I would also prefer doing everything step-by-step and understand the root of it, instead of having the thing set up for me; and then later when the shit hits the fan I don't know where to fix it. Personal project-wise, on my own laptop, I have more than just Laravel projects, so it does not make sense to have MySQL and stuffs inside each container, instead of using the MySQL that I already installed and can access easily.
 <br><br>
 Lastly, if you are a Linux or Mac user, you might be asking: why am I still using Windows as a developer? I won't answer this question right now since it can be a separated blog post already, I will link it here when I have it ready *wink*.
+<br><br>
+<h2>2. Prerequisites</h2>
+<br>
+Enough reasoning, so it's time to get on with the actual steps. The thing that you can easily install (or might already have) are:
+<ul>
+<li>Enabling WSL2 (Windows Subsystem for Linux, and I would use version 2 instead of 1). In this article, I will be using the Ubuntu distribution.</li>
+<li>MySQL outside of WSL - since it won't belong to Laravel development only</li>
+</ul>
+Everything else, we will be installing in WSL, since the installation on Windows and WSL are different.
+<br><br>
+<h2>3. Installing required Linux packages</h2>
+<br>
+With a fresh WSL, it might be a bit of a pain at first to have missing things installed. But this should be resolved quickly (like if curl is missing, we install it <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">sudo apt-get install curl</span>).
+<br><br>
+The next part is installing Laravel-required stuffs, which are PHP and composer. PHP Since WSL works beautifully like a real Ubuntu, we can just follow the <a target="_blank" style="color: blue;" href="https://getcomposer.org/download/">Composer command-line installation</a> after we got PHP installed.
+<br><br>
+<div style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-size: 90%; text-align: left; line-height: 2; font-family: Consolas, monaco, monospace; overflow: scroll;">
+> sudo apt install php8.1<br>
+> php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"<br>
+> php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"<br>
+> php composer-setup.php<br>
+> php -r "unlink('composer-setup.php');"<br>
+> sudo mv composer.phar /usr/local/bin/composer
+</div>
+<br><br>
+And after that you can verify the installation with calling <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">composer</span>!
+<br><br>
+<img style="max-width: 100%; max-height: 600px;" src="../static/images/blog6_1.png"/><br>
+<br>
+Laravel 9 requires PHP 8, so it's also good to check that the correct PHP version was installed with <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">php -v</span>.
+<br><br>
+It also requires specific packages, so you can do<br>
+<span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">sudo apt install openssl php-common php-bcmath php-curl php-json php-mbstring php-mysql php-xml php-zip</span>
+<br>
+to get them.
+<br><br>
+<h2>4. Getting Laravel up and running</h2>
+<br>
+Getting the base project would be the first part. Make sure you are in the correct parent folder, and replace "example-app" with the project name.
+<br>
+<span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">composer create-project laravel/laravel example-app</span>
+<br><br>
+Then <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">cd example-app</span> inside it,
+<br>
+get our <b>.env</b> file ready by <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">cp .env.example .env</span> and <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">php artisan key:generate</span>
+<br>
+and start the thing up with <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">php artisan serve</span>!
+<br><br>
+The default starting page should now be up and running!
+<br><br>
+<h2>5. Databases connection</h2>
+<br>
+Of course it won't end with just getting the thing up. The quirky part is how to connect with MySQL outside of WSL.
+<br><br>
+Creating the database and changing the settings in <b>.env</b> is a must, but the <b>DB_HOST</b> won't simply be <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">localhost</span>.
+<br><br>
+It should be the IP address of our local machine from WSL point of view, which can be get easily by doing
+<span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">cat /etc/resolv.conf</span>
+<br>
+under <b>nameserver</b> value.
+<br><br>
+For example, running it today give me this result
+<br>
+<img style="max-width: 100%; max-height: 600px;" src="../static/images/blog6_2.png"/><br>
+<br>
+then <b><i>today</i></b>, my <b>DB_HOST</b> will be <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">172.23.160.1</span>.
+<br><br>
+As you noticed, I mentioned <b><i>today</i></b>. That's right - everyday when you restarted our system and start WSL, a new IP address will be given to WSL so this nameserver will be changed. You will need to update this value everyday - for me it's not a big problem and can be solved easily with a quick script to get the value and replace it in <b>.env</b>.
+<br><br>
+Lastly, you need to give the MySQL user you give Laravel the PRIVILEGES to access databases from WSL, since MySQL will now see it as connection from a different IP address.
+<br>
+I would not open my MySQL Server to outside connection, so I will give the user <b>'dev'@'%'</b> the privileges instead of stating a different IP everyday. (Replace 'PASSWORD' with your password of course).
+<br></br>
+<div style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-size: 90%; text-align: left; line-height: 2; font-family: Consolas, monaco, monospace; overflow: scroll;">
+> CREATE DATABASE example-app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;<br>
+> CREATE USER 'dev'@'%' IDENTIFIED BY 'PASSWORD';<br>
+> GRANT ALL PRIVILEGES ON *.* TO 'dev'@'%' WITH GRANT OPTION;<br>
+> FLUSH PRIVILEGES;
+</div>
+<br><br>
+And now  <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: Consolas, monaco, monospace;">php artisan migrate:install</span> will work. After this would be a history :3
+<br><br>
+<h2>6. Conclusion</h2>
+<br>
+Thanks to WSL, there are a lot of things possible on our Windows machine, the possibilties are infinite. It might take time to figuring out things at first, but later with all the setup that we've done, setting up on our actual production server would be a piece of cake. I hope that this blog post could be useful to you, my Windows-users brothers and sisters <3
