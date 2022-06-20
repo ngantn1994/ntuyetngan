@@ -14,7 +14,7 @@ const title = {
       date: '2021/12/22 02:00',
       tags: ['Working diary', 'Programming'],
       summary: 'When someone says "419", what do you think about first?',
-      thumb: '../static/images/thumb-5.jpg',
+      thumb: '../static/images/thumb-5.png',
     },
     {
       id: 4,

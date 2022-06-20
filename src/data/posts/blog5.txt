@@ -1,6 +1,6 @@
-<b>419. The infamous error code that might give hours of headache to the pitiful programmers (or not). In many of the reason that 419 might happens, today, I want to talk about cors. The deadly error that personally, I think it does not makes much sense security wise (and it's really doesn't). But as a web developer, a slave of the browser, it's always a fun topic to talk about.
+<b>419. The infamous error code that might give hours of headache to the pitiful programmers (or not). You might argue that it's the CSRF Token error, I totally agree. In many of the reason that 419 might happens, today, I want to talk about cors. The deadly error that personally, I think it does not makes much sense security wise (and it's really doesn't). But as a web developer, a slave of the browser, it's always a fun topic to talk about.
 </b><br><br>
-<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/thumb-5.jpg"/><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/blog5_4.jpg"/><br>
 </center>
 <br>
 Usually on a working and running project, when cors error appear, it's time to check the config files. If the cors was not set up properly, just how can we start the development? So most of the time, I don't think we would need to worry about cors settings.
