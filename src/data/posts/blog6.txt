@@ -1,0 +1,16 @@
+<b>Using composer might not always be the best for Windows user. I don't like having manually install packages, using tools like chocolatey, or running <span style="color: #ff2b20; background-color: #eef0f0; padding-left: 5px; padding-right: 5px; font-family: monospace;">composer install --ignore-platform-reqs</span> all the time. So I decided to start from scratch with WSL.
+</b><br><br>
+<center><img style="max-width: 100%; max-height: 600px;" src="../static/images/thumb-6.jpg"/><br>
+</center>
+<br>
+<h2>1. Why WSL?</h2>
+<br>
+Laravel 9 has the official way of using  <a target="_blank" style="color: blue;" href="https://laravel.com/docs/9.x/sail">Laravel Sail</a> - its default Docker development environment. You might be asking me: then why don't I just use it? Docker is the trend and everything, and it's really easy to use too.
+<br>
+The thing is on actual deployment environment, you might not want to use it at all. While working, the powerful devops guy will set the thing up and running, so all we need to do is focus on coding. But while trying to deploying our own project, it's not always the best choice to choose an expensive docker option (it might be cheaper and easier in the future), but considering the cost, we might have many servers choice that won't support it, and docker itself takes a lot of spaces.
+<br><br>
+(You can say that I'm old fashioned, I guess I do. But I still don't like the idea of putting MySQL inside docker container at the moment - so I would rather separate it.)
+<br><br>
+Development-wise, I would also prefer doing everything step-by-step and understand the root of it, instead of having the thing set up for me; and then later when the shit hits the fan I don't know where to fix it. Personal project-wise, on my own laptop, I have more than just Laravel projects, so it does not make sense to have MySQL and stuffs inside each container, instead of using the MySQL that I already installed and can access easily.
+<br><br>
+Lastly, if you are a Linux or Mac user, you might be asking: why am I still using Windows as a developer? I won't answer this question right now since it can be a separated blog post already, I will link it here when I have it ready *wink*.
