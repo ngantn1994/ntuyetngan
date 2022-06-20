@@ -1,6 +1,14 @@
 const title = {
   data: [
     {
+      id: 6,
+      title: 'Setting up Laravel 9 for development on Windows using WSL',
+      date: '2022/06/20 22:00',
+      tags: ['Working diary', 'Programming'],
+      summary: 'Considering the fact that many packages are not supported by Windows, using WSL from the start might save you lots of troubles.',
+      thumb: '../static/images/thumb-6.jpg',
+    },
+    {
       id: 5,
       title: 'Cors',
       date: '2021/12/22 02:00',
